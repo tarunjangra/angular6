@@ -7,4 +7,7 @@
   3. two way binding done thorugh ([(ngModel)] = "data")
 3. By wrapping any html attribute of any component with square brackets, you can bind properties defined in component class.
 4. All javascript events like "onClick" are valid for angular application. But they have to be used by "on" prefix. 
-5. 
+5. *ngIf is the structural directive given by Angular. That can be used to put if condition in angular application. 
+6. except *ngIf default structural directives there is other type of directives called attribute directives.
+7. Structural directives add or remove elements in the DOM. Where as attribute directive change the element they were placed on.
+8. 
