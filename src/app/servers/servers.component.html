@@ -1,4 +1,7 @@
-<button class="ui primary button" (click)="setServerOnLine" [disabled]="!allowNewServer" >Add Server</button>
+<button class="ui primary button" 
+(click)="onCreateServer()" 
+[disabled]="!allowNewServer" >Add Server</button>
 <p [innerText]="allowNewServer" ></p>
+<p>{{serverCreationStatus}}</p>
 <gi-server></gi-server>
 <gi-server></gi-server>

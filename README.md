@@ -6,4 +6,5 @@
   2. template to Typescript data binding is done through event binding. ( (event) = "expression" )
   3. two way binding done thorugh ([(ngModel)] = "data")
 3. By wrapping any html attribute of any component with square brackets, you can bind properties defined in component class.
-
+4. All javascript events like "onClick" are valid for angular application. But they have to be used by "on" prefix. 
+5. 
