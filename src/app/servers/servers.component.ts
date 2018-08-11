@@ -13,6 +13,9 @@ export class ServersComponent implements OnInit {
   serverCreated: boolean = false;
   availableServers = ['Server one','Server two'];
 
+  displayDetails: boolean = false;
+  buttonLog = [];
+
   constructor() { 
     setTimeout(() => {
       this.allowNewServer = true;
@@ -32,6 +35,14 @@ export class ServersComponent implements OnInit {
     // HTMLInputElement is casting event.target object to HTML input element to be
     // interpreted by IDE propertly.
    this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  onClickDisplayDetails(){
+    this.displayDetails = !this.displayDetails;
+    this.buttonLog.push({
+      action: 'button clicked',
+      time: new Date()
+    });
   }
 
 }
