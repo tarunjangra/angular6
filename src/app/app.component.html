@@ -1,9 +1,9 @@
-<gi-header></gi-header>
+<gi-header (featureSelected)="onNavigate($event)"></gi-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <gi-recipes (recipe)="showNavigation($event)" ></gi-recipes>
-      <gi-shopping-list (shoppingList)="showNavigation($event)" *ngIf="shoppingList" ></gi-shopping-list>
+      <gi-recipes *ngIf="loadedFeature==='recipe'"></gi-recipes>
+      <gi-shopping-list *ngIf="loadedFeature!=='recipe'" ></gi-shopping-list>
     </div>
   </div>
 </div>

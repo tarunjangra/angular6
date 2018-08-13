@@ -8,10 +8,10 @@ import { Component, Output, EventEmitter } from "@angular/core";
 
 export class HeaderComponent {
 
-  @Output() selection: EventEmitter<string> = new EventEmitter();
+  @Output() featureSelected: EventEmitter<string> = new EventEmitter();
 
   onSelect(nav: string){
-    this.selection.emit(nav);
+    this.featureSelected.emit(nav);
   }
   
 }
