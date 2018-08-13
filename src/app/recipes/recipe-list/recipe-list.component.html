@@ -8,6 +8,6 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-      <gi-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe"></gi-recipe-item>
+      <gi-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl" (recipeSelected)="onRecipeSelecte(recipeEl)"></gi-recipe-item>
   </div>
 </div>
