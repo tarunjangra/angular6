@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesComponent implements OnInit {
 
+  recipe: boolean = true;
   constructor() { }
 
   ngOnInit() {
+  }
+
+
+  showNavigation(navigation: string){
+    if(navigation === 'recipe'){
+      this.recipe = true;
+    }else{
+      this.recipe = false;
+    }
   }
 
 }

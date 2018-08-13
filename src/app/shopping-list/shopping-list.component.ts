@@ -12,9 +12,21 @@ export class ShoppingListComponent implements OnInit {
     new Ingredient('Tommatos', 10),
   ];
 
+  shoppingList: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+
+  showNavigation(navigation: string){
+    console.log(navigation);
+    if(navigation === 'shopping_list'){
+      this.shoppingList = true;
+    }else{
+      this.shoppingList = false;
+    }
   }
 
 }

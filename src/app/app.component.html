@@ -1,9 +1,9 @@
+<gi-header></gi-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <gi-header></gi-header>
-      <gi-recipes></gi-recipes>
-      <gi-shopping-list></gi-shopping-list>
+      <gi-recipes (recipe)="showNavigation($event)" ></gi-recipes>
+      <gi-shopping-list (shoppingList)="showNavigation($event)" *ngIf="shoppingList" ></gi-shopping-list>
     </div>
   </div>
 </div>
