@@ -19,7 +19,18 @@
 <button class="ui primary button" 
 (click)="onCreateServer()" 
 [disabled]="!allowNewServer" >Add Server</button>
-<!-- <p [innerText]="allowNewServer" ></p> -->
-<!-- <p>{{serverCreationStatus}}</p> -->
-<gi-server></gi-server>
-<gi-server></gi-server>
+<gi-server *ngFor="let server of availableServers" ></gi-server>
+
+<button class="ui yellow button"
+(click)="onClickDisplayDetails()"
+>Display Details</button>
+<p *ngIf="!displayDetails">Secret Password = "tuna"</p>
+<ol>
+ <li 
+ *ngFor="let log of buttonLog; index as i" 
+ [ngStyle]="{'backgroundColor': i>=4?'blue':'tranparent'}"
+ [ngClass]="{'white': i>=4?true:false}"
+ >
+   Action "{{log.action}}" has been executed on {{log.time}}
+ </li>
+</ol>

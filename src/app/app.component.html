@@ -1,12 +1,9 @@
-<div class="ui container">
-    <div class="ui grid">
-        <div class="row">
-            <div class="column">
-                    <h3>I'm in the App Component.</h3>
-                    <hr>
-                    <gi-servers></gi-servers>
-            </div>
-        </div>
+<gi-header (featureSelected)="onNavigate($event)"></gi-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <gi-recipes *ngIf="loadedFeature==='recipe'"></gi-recipes>
+      <gi-shopping-list *ngIf="loadedFeature!=='recipe'" ></gi-shopping-list>
     </div>
+  </div>
 </div>
-
