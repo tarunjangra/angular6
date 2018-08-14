@@ -19,6 +19,8 @@
 14. Structural directives looks like a normal HTML attributes but leading with "*"
 15. Structural directives affect the whole area in the DOM (elements get added or removed).
 16. We can not put more than one structure directive in HTML element. It has to be one. So you can not put *ngFor and *ngIf together. 
-17. 
+17. structural directive with "*" is simply a fancy way to differenciate structural and attribute directives. you can use *ngFor to [ngFor] and *ngIf to [ngIf]. but you also need to use ng-template component provided by angular.
+18. Instances of the services are available from the parent component to the child component but not from child component to parent component. They work as one way up to down hierarchical injectors.
+19. To make the service instance common for the entire Module. you can provide it through app module provider.
     
     

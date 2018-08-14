@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from '../services/shopping-list.service';
 
 @Component({
   selector: 'gi-shopping-list',
@@ -7,21 +8,20 @@ import { Ingredient } from '../shared/ingredient.model';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
-  ingredients: Ingredient[]= [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tommatos', 10),
-  ];
+  ingredients: Ingredient[]= [];
 
   shoppingList: boolean = false;
 
-  constructor() { }
+  constructor(
+    private shoppingListService: ShoppingListService
+  ) { }
 
   ngOnInit() {
+    this.ingredients = this.shoppingListService.ingredients;
   }
 
 
   showNavigation(navigation: string){
-    console.log(navigation);
     if(navigation === 'shopping_list'){
       this.shoppingList = true;
     }else{
@@ -30,7 +30,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
   addIngredient(ingredient: Ingredient){
-    this.ingredients.push(ingredient);
+    this.shoppingListService.ingredients.push(ingredient);
   }
 
 }
