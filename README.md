@@ -14,5 +14,11 @@
 9. ngAfterContentChecked lifecycle hook get Called after every check of the component's or directive's content.
 10. ngAfterViewInit lifecycle hook get Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
 11. ngOnDestroy lifecycle hook get Called once, before the instance is destroyed.
+12. Attribute Directives looks like a normal HTML Attributes (possibly with data binding or event binding).
+13. Attribute directives only effect/change the element they are added to.
+14. Structural directives looks like a normal HTML attributes but leading with "*"
+15. Structural directives affect the whole area in the DOM (elements get added or removed).
+16. We can not put more than one structure directive in HTML element. It has to be one. So you can not put *ngFor and *ngIf together. 
+17. 
     
     
