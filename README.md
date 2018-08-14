@@ -14,5 +14,7 @@
 9. ngAfterContentChecked lifecycle hook get Called after every check of the component's or directive's content.
 10. ngAfterViewInit lifecycle hook get Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
 11. ngOnDestroy lifecycle hook get Called once, before the instance is destroyed.
+12. structural directive with "*" is simply a fancy way to differenciate structural and attribute directives. you can use *ngFor to [ngFor] and *ngIf to [ngIf]. but you also need to use ng-template component provided by angular.
+13. 
     
     
