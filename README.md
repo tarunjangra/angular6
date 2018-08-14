@@ -15,6 +15,7 @@
 10. ngAfterViewInit lifecycle hook get Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
 11. ngOnDestroy lifecycle hook get Called once, before the instance is destroyed.
 12. structural directive with "*" is simply a fancy way to differenciate structural and attribute directives. you can use *ngFor to [ngFor] and *ngIf to [ngIf]. but you also need to use ng-template component provided by angular.
-13. 
+13. Instances of the services are available from the parent component to the child component but not from child component to parent component. They work as one way up to down hierarchical injectors.
+14. To make the service instance common for the entire Module. you can provide it through app module provider.
     
     
