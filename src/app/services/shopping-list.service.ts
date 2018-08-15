@@ -5,7 +5,7 @@ import { Ingredient } from '../shared/ingredient.model';
   providedIn: 'root'
 })
 export class ShoppingListService {
-  selectedIngredient = new EventEmitter<void>();
+  newIngredient = new EventEmitter<Ingredient[]>();
   private ingredients: Ingredient[]= [
     new Ingredient('Apples', 5),
     new Ingredient('Tommatos', 10),
@@ -14,15 +14,16 @@ export class ShoppingListService {
   constructor() { }
 
   getIngredients(): Ingredient[]{
-    return this.ingredients;
+    return this.ingredients.slice();
   }
   /**
    * This function can be used to add Ingredient
    * @param ingObj Ingredient object
    * @returns Number of available elements in an array
    */
-  addIngredient(ingObj: Ingredient): number{
-    return this.ingredients.push(ingObj);
+  addIngredient(ingObj: Ingredient){
+    this.ingredients.push(ingObj);
+    this.newIngredient.emit(this.ingredients.slice());
   }
 
   deleteIngredient(indx: number): Ingredient[]{
