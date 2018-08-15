@@ -8,8 +8,6 @@ import { RecipesService } from '../services/recipes.service';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-
-  recipe: boolean = true;
   selectedRecipe: Recipe;
   constructor(
     private recipeService: RecipesService
@@ -22,14 +20,6 @@ export class RecipesComponent implements OnInit {
         this.selectedRecipe = recipe;
       }
     );
-  }
-
-  showNavigation(navigation: string){
-    if(navigation === 'recipe'){
-      this.recipe = true;
-    }else{
-      this.recipe = false;
-    }
   }
 
 }

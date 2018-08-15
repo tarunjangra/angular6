@@ -10,8 +10,6 @@ import { ShoppingListService } from '../services/shopping-list.service';
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[]= [];
 
-  shoppingList: boolean = false;
-
   constructor(
     private shoppingListService: ShoppingListService
   ) { }
@@ -26,11 +24,4 @@ export class ShoppingListComponent implements OnInit {
       );
   }
 
-  showNavigation(navigation: string){
-    if(navigation === 'shopping_list'){
-      this.shoppingList = true;
-    }else{
-      this.shoppingList = false;
-    }
-  }
 }
