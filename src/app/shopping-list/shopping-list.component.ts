@@ -5,7 +5,9 @@ import { ShoppingListService } from '../services/shopping-list.service';
 @Component({
   selector: 'gi-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.css']
+  styleUrls: ['./shopping-list.component.css'],
+
+  providers: [ShoppingListService]
 })
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[]= [];
@@ -17,9 +19,8 @@ export class ShoppingListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.ingredients = this.shoppingListService.ingredients;
+    this.ingredients = this.shoppingListService.getIngredients();
   }
-
 
   showNavigation(navigation: string){
     if(navigation === 'shopping_list'){
@@ -28,9 +29,4 @@ export class ShoppingListComponent implements OnInit {
       this.shoppingList = false;
     }
   }
-
-  addIngredient(ingredient: Ingredient){
-    this.shoppingListService.ingredients.push(ingredient);
-  }
-
 }

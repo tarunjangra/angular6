@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { RecipesService } from '../services/recipes.service';
 
 @Component({
   selector: 'gi-recipes',
@@ -9,11 +10,19 @@ import { Recipe } from './recipe.model';
 export class RecipesComponent implements OnInit {
 
   recipe: boolean = true;
-  constructor() { }
+  selectedRecipe: Recipe;
+  constructor(
+    private recipeService: RecipesService
+  ) { }
 
   ngOnInit() {
+    this.recipeService.selectedRecipe
+    .subscribe(
+      (recipe: Recipe) => {
+        this.selectedRecipe = recipe;
+      }
+    );
   }
-
 
   showNavigation(navigation: string){
     if(navigation === 'recipe'){
