@@ -19,11 +19,7 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   pushToShoppingList(){
-    this.recipe.ingredients.map(
-      (ingredient: Ingredient) => {
-        this.shoppingSerices.addIngredient(ingredient);
-      }
-    );
+    this.shoppingSerices.addIngredients(this.recipe.ingredients);
   }
 
 
