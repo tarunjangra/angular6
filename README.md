@@ -38,3 +38,5 @@ To fix this behavior, you need to change the matching strategy to "full" :
 { path: '', redirectTo: '/somewhere-else', pathMatch: 'full' } 
 ```
 Now, you only get redirected, if the full path is ''  (so only if you got NO other content in your path in this example).
+23. subject in rxjs does work like angular Event Emitter. We should even use Rxjs Subject instead of EventEmitter for cross component communication.
+24.
