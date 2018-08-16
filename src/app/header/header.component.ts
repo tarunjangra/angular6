@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from "@angular/core";
+import { Component} from "@angular/core";
+import { AuthService } from '../services/auth.service';
 
 @Component({
   templateUrl: './header.component.html',
@@ -7,5 +8,19 @@ import { Component, Output, EventEmitter } from "@angular/core";
 })
 
 export class HeaderComponent {
+
+  loginState: boolean = false;
+
+  constructor(
+    private auth: AuthService
+  ){}
   
+  login(){
+    this.auth.login();
+    this.loginState = true;
+  }
+  logout(){
+    this.auth.logout();
+    this.loginState = false;
+  }
 }

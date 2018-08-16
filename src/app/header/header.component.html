@@ -13,6 +13,16 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{exact: true}"
         ><a routerLink="/shopping-list">Shopping list</a></li>
+        <li><a 
+          style="cursor: pointer;" 
+          *ngIf="!loginState" 
+          (click)="login()"
+          >Login</a></li>
+        <li><a 
+          style="cursor: pointer;"
+          *ngIf="loginState"
+          (click)="logout()"
+          >Logout</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" giDropdown>
