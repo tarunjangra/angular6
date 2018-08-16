@@ -13,9 +13,13 @@ export class ShoppingListService {
   ];
   constructor() { }
 
-  getIngredients(): Ingredient[]{
-    return this.ingredients.slice();
+  getIngredients(indx: number = null): Ingredient[] {
+    if (indx === null){
+      return this.ingredients.slice();
+    }
+    return [this.ingredients[indx]];
   }
+
   /**
    * This function can be used to add Ingredient
    * @param ingObj Ingredient object
