@@ -2,9 +2,9 @@
 
 1. There is only per perperty, a component has to have. templateUrl or template.
 2. Communication between typescript code and template is called data binding.
-  1. Typescript code to template is output data. Which can be done through string interpolation {{data}} or property binding ([property]="data").
-  2. template to Typescript data binding is done through event binding. ( (event) = "expression" )
-  3. two way binding done thorugh ([(ngModel)] = "data")
+    * Typescript code to template is output data. Which can be done through string interpolation {{data}} or property binding ([property]="data").
+    * template to Typescript data binding is done through event binding. ( (event) = "expression" )
+    * two way binding done thorugh ([(ngModel)] = "data")
 3. By wrapping any html attribute of any component with square brackets, you can bind properties defined in component class.
 4. All javascript events like "onClick" are valid for angular application. But they have to be used by "on" prefix. 
 5. ngOnInit lifecycle hook get Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -24,7 +24,10 @@
 19. To make the service instance common for the entire Module. you can provide it through app module provider.
 20. When you create your own subscriptions based on Observables. it is highly recommended to destroy them usind "ngOnDestroy" lifecycle hook. 
 21. Make sure to put redirectTo route at the end of all routes covering all routes. Order is really important.
-22. By default, Angular matches paths by prefix. That means, that the following route will match both /recipes  and just / 
+22. By default, Angular matches paths by prefix. That means, that the following route will match both /recipes  and just 
+
+
+/ 
 
 ```javascript
 { path: '', redirectTo: '/somewhere-else' } 
