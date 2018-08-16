@@ -24,11 +24,7 @@
 19. To make the service instance common for the entire Module. you can provide it through app module provider.
 20. When you create your own subscriptions based on Observables. it is highly recommended to destroy them usind "ngOnDestroy" lifecycle hook. 
 21. Make sure to put redirectTo route at the end of all routes covering all routes. Order is really important.
-22. By default, Angular matches paths by prefix. That means, that the following route will match both /recipes  and just 
-
-
-/ 
-
+22. By default, Angular matches paths by prefix. That means, that the following route will match both /recipes  and just / 
 ```javascript
 { path: '', redirectTo: '/somewhere-else' } 
 ```
@@ -42,5 +38,3 @@ To fix this behavior, you need to change the matching strategy to "full" :
 { path: '', redirectTo: '/somewhere-else', pathMatch: 'full' } 
 ```
 Now, you only get redirected, if the full path is ''  (so only if you got NO other content in your path in this example).
-    
-    
