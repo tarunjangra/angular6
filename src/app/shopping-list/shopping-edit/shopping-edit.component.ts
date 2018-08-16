@@ -1,8 +1,10 @@
-import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+
+
 import { Ingredient } from '../../shared/ingredient.model';
 import { ShoppingListService } from '../../services/shopping-list.service';
-import { ActivatedRoute, Params, Router } from '../../../../node_modules/@angular/router';
-import { Subscription } from '../../../../node_modules/rxjs';
 
 
 @Component({
@@ -14,11 +16,13 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   ingredient: Ingredient = {name: null, amount: null};
   mode: string;
   paramSubscription: Subscription;
+  changesSaved: boolean = false;
   constructor(
     private shoppingList: ShoppingListService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) { 
+  }
 
   ngOnInit() {
     if(this.route.snapshot.params['id']){
