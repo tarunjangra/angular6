@@ -13,12 +13,16 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipeNewComponent } from './recipes/recipe-new/recipe-new.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 const appRoutes: Routes = [
   {path: '', component: RecipesComponent},
+  {path: 'recipe', component: RecipesComponent},
   {path: 'shopping-list', component: ShoppingListComponent},
-  {path: 'shopping-list/:id/:mode', component: ShoppingListComponent},
+  {path: 'shopping-list/:id', component: ShoppingListComponent},
   {path: 'recipe/new', component: RecipeNewComponent},
-  {path: 'recipe/:id', component: RecipesComponent}
+  {path: 'recipe/:id', component: RecipesComponent},
+  {path: 'not-found', component: PageNotFoundComponent},
+  {path: '**', redirectTo: 'not-found'}
 ];
 
 @NgModule({
@@ -33,6 +37,7 @@ const appRoutes: Routes = [
     ShoppingEditComponent,
     DropdownDirective,
     RecipeNewComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

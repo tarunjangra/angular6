@@ -23,5 +23,21 @@
 18. Instances of the services are available from the parent component to the child component but not from child component to parent component. They work as one way up to down hierarchical injectors.
 19. To make the service instance common for the entire Module. you can provide it through app module provider.
 20. When you create your own subscriptions based on Observables. it is highly recommended to destroy them usind "ngOnDestroy" lifecycle hook. 
+21. Make sure to put redirectTo route at the end of all routes covering all routes. Order is really important.
+22. By default, Angular matches paths by prefix. That means, that the following route will match both /recipes  and just / 
+
+```javascript
+{ path: '', redirectTo: '/somewhere-else' } 
+```
+Actually, Angular will give you an error here, because that's a common gotcha: This route will now ALWAYS redirect you! Why?
+
+Since the default matching strategy is "prefix" , Angular checks if the path you entered in the URL does start with the path specified in the route. Of course every path starts with ''  (Important: That's no whitespace, it's simply "nothing").
+
+To fix this behavior, you need to change the matching strategy to "full" :
+
+```javascript
+{ path: '', redirectTo: '/somewhere-else', pathMatch: 'full' } 
+```
+Now, you only get redirected, if the full path is ''  (so only if you got NO other content in your path in this example).
     
     

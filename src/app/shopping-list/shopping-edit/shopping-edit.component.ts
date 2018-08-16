@@ -11,7 +11,7 @@ import { Subscription } from '../../../../node_modules/rxjs';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
-  ingredient: Ingredient;
+  ingredient: Ingredient = {name: null, amount: null};
   mode: string;
   paramSubscription: Subscription;
   constructor(
@@ -21,18 +21,24 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    if(this.route.snapshot.params['id'] && this.route.snapshot.params['mode']){
+    if(this.route.snapshot.params['id']){
       this.ingredient = this.shoppingList.getIngredients(this.route.snapshot.params['id'])[0];
-      this.mode = this.route.snapshot.params['mode'];
     }
     this.paramSubscription = this.route.params.subscribe(
       (params: Params) => {
-        if(params['id'] && params['mode']){
+        if(params['id']){
           this.ingredient = this.shoppingList.getIngredients(params['id'])[0];
-          this.mode = params['mode'];
         }
       }
     );
+
+    console.log(this.route.snapshot.queryParams['mode']);;
+    this.route.queryParams.subscribe(
+      (params: Params) => {
+        console.log(params['mode'])
+      }
+    );
+
   }
 
   addIngredient(name: HTMLInputElement,amount: HTMLInputElement){
