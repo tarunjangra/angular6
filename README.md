@@ -22,5 +22,6 @@
 17. structural directive with "*" is simply a fancy way to differenciate structural and attribute directives. you can use *ngFor to [ngFor] and *ngIf to [ngIf]. but you also need to use ng-template component provided by angular.
 18. Instances of the services are available from the parent component to the child component but not from child component to parent component. They work as one way up to down hierarchical injectors.
 19. To make the service instance common for the entire Module. you can provide it through app module provider.
+20. When you create your own subscriptions based on Observables. it is highly recommended to destroy them usind "ngOnDestroy" lifecycle hook. 
     
     
