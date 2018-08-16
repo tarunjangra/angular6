@@ -21,7 +21,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   navigateToNewRecipe(){
-    this.route.navigate(['/recipe','new']);
+    this.route.navigate(['/recipes','new']);
   }
 
 }
