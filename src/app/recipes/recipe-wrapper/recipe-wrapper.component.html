@@ -1,0 +1,6 @@
+  <gi-recipe-detail 
+    *ngIf="selectedRecipe;else infoText"
+    ></gi-recipe-detail>
+    <ng-template #infoText>
+      <h3>Please select a Recipe!</h3>
+    </ng-template>

@@ -3,14 +3,6 @@
     <gi-recipe-list></gi-recipe-list>
   </div>
   <div class="col-md-7">
-    <gi-recipe-detail 
-    *ngIf="selectedRecipe;else infoText"
-    [recipe]="selectedRecipe"
-    ></gi-recipe-detail>
-    <ng-template #infoText>
-      <p >
-        Please select a Recipe!
-      </p>
-    </ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>
