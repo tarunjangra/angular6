@@ -16,7 +16,8 @@ import { RecipeNewComponent } from './recipes/recipe-new/recipe-new.component';
 const appRoutes: Routes = [
   {path: '', component: RecipesComponent},
   {path: 'shopping-list', component: ShoppingListComponent},
-  {path: 'recipe/new', component: RecipeNewComponent}
+  {path: 'recipe/new', component: RecipeNewComponent},
+  {path: 'recipe/:id', component: RecipesComponent}
 ];
 
 @NgModule({
